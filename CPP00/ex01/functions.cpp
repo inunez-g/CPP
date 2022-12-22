@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 12:04:25 by inunez-g          #+#    #+#             */
-/*   Updated: 2022/12/21 13:05:59 by inunez-g         ###   ########.fr       */
+/*   Updated: 2022/12/21 19:53:07 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,9 @@ std::string check_len(std::string str)
     std::string final_str;
     int i = 0;
     
-    if (str.length() < 10)
+    if (str.length() <= 10)
         return (str);
-    while (i < 9)
-    {
-        final_str[i] = str[i];
-        i++;
-    } 
+    final_str = str.substr(0, 9);
     final_str.append(".");
     return (final_str);
 }
@@ -68,15 +64,20 @@ void PhoneBook::add_contact(int i)
     std::string info[5];
     
     std::cout << "Enter your First Name:" << std::endl;
-    std::cin >> info[0];
+    std::getline(std::cin >> std::ws, info[0]);
     std::cout << "Enter your Last Name:" << std::endl;
-    std::cin >> info[1];
+    std::getline(std::cin >> std::ws, info[1]);
     std::cout << "Enter your Nickname:" << std::endl;
-    std::cin >> info[2];
+    std::getline(std::cin >> std::ws, info[2]);
     std::cout << "Enter your Phone Number:" << std::endl;
-    std::cin >> info[3];
+    std::getline(std::cin >> std::ws, info[3]);
+    while (check_isdigit(info[3]))
+    {
+        std::cout << "The phone number must only have numbers. Type it again!" << std::endl;
+        std::getline(std::cin >> std::ws, info[3]);
+    }
     std::cout << "Enter your Darkest Secret:" << std::endl;
-    std::cin >> info[4];
+    std::getline(std::cin >> std::ws, info[4]);
     contacts[i].save_contact(info[0], info[1], info[2], info[3], info[4]);
     std::cout << "Your contact has been saved" << std::endl;
     if (n_contacts < 8)
@@ -84,9 +85,20 @@ void PhoneBook::add_contact(int i)
     return ;
 }
 
+void Contact::get_contact_list(int i)
+{
+    std::cout << "[" << i << "]" << "|";
+    std::cout << std::setw(10) << check_len(first_name) << "|";
+    std::cout << std::setw(10) << check_len(last_name) << "|";
+    std::cout << std::setw(10) << check_len(nickname) << "|";
+    std::cout << std::endl;
+    return ;
+}
+
 void PhoneBook::search_contact(void)
 {
     int i = 0;
+    std::string number;
 
     if (!n_contacts)
     {
@@ -97,9 +109,22 @@ void PhoneBook::search_contact(void)
     {
         while (i < n_contacts)
         {
-            contacts[i].print_contact();
+            contacts[i].get_contact_list(i);
+            i++;
         }
-        std::cout << "Select de number of the contact you want: " << std::endl;
-        std::cin >> i;
+        std::cout << "Select the number of the contact you want: " << std::endl;
+        std::cin >> number;
+        while (number.size() > 1 || !std::isdigit(number[0]))
+        {
+            std::cout << "Not an option. Try again!" << std::endl;
+            std::cin >> number;
+        }
+        i = atoi(number.c_str());
+        if (i >=  n_contacts)
+        {
+            std::cout << "Sorry, that number of contact does not exist" << std::endl;
+            return ;   
+        }
+        contacts[i].print_contact();
     }
 }

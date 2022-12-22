@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:45:24 by inunez-g          #+#    #+#             */
-/*   Updated: 2022/12/21 12:48:56 by inunez-g         ###   ########.fr       */
+/*   Updated: 2022/12/21 19:17:10 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define PHONEBOOK_H
 #include <string>
 #include <iostream>
+#include <iomanip>
 
 class Contact{
     private:
@@ -26,6 +27,7 @@ class Contact{
         Contact(void);
         void save_contact(std::string input_fn, std::string input_ln, std::string input_nn, std::string input_pn, std::string input_ds);
         void print_contact(void);
+        void get_contact_list(int i);
 };
 
 class PhoneBook
