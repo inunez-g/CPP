@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 17:59:24 by inunez-g          #+#    #+#             */
-/*   Updated: 2022/12/22 19:13:47 by inunez-g         ###   ########.fr       */
+/*   Updated: 2022/12/26 17:35:58 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,11 @@ void Account::_displayTimestamp()
 
     time(&timing);
     mytime = localtime(&timing);
-    std::cout << "[" << mytime->tm_year << mytime->tm_mon << mytime->tm_mday << "_" << mytime->tm_hour << mytime->tm_min << mytime->tm_sec << "]" << " ";
+    std::cout << "[" << mytime->tm_year + 1900 << mytime->tm_mon + 1 << mytime->tm_mday << "_" << mytime->tm_hour << mytime->tm_min;
+    if (mytime->tm_sec < 10)
+        std::cout << "0" << mytime->tm_sec << "]" << " ";
+    else
+        std::cout << mytime->tm_sec << "]" << " ";
     return ;
 }
 

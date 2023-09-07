@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/21 11:51:36 by inunez-g          #+#    #+#             */
-/*   Updated: 2022/12/21 12:58:26 by inunez-g         ###   ########.fr       */
+/*   Updated: 2022/12/26 17:42:48 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ int main()
         }
         else if (!action.compare("EXIT"))
             break;
+        else
+            std::cout << "Error! Escribe una de las 3 opciones (En mayúsculas)." << std::endl;
     }
     return (0);
 }
