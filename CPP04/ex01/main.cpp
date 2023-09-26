@@ -5,30 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 11:13:08 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/12 09:52:12 by inunez-g         ###   ########.fr       */
+/*   Created: 2023/09/13 10:25:50 by inunez-g          #+#    #+#             */
+/*   Updated: 2023/09/14 10:21:54 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
-    ClapTrap    player1("Ramon");
-    ScavTrap    player2("Pepe");
+    int i = -1;
+    int nAnimals = 40;
+    const Animal    *animals[nAnimals];
     
-    player1.attack("Pepe");
-    player1.info();
-    player2.takeDamage(3);
-    player2.info();
-    player2.beRepaired(2);
-    player2.info();
-    player2.attack("Ramon");
-    player2.info();
-    player1.takeDamage(player2.getAttackDamage());
-    player1.info();
-    player2.guardGate();
-    player1.attack("Pepe");
-    return (0);
+    while (i++ < nAnimals)
+    {
+        if (i%2 == 0)
+            animals[i] = new Dog;
+        else
+            animals[i] = new Cat;
+    }
+    i = -1;
+    while (i++ < nAnimals)
+        delete animals[i];
+    return 0;
 }

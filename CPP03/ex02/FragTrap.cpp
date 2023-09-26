@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 12:23:31 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/12 10:22:31 by inunez-g         ###   ########.fr       */
+/*   Created: 2023/09/12 09:54:58 by inunez-g          #+#    #+#             */
+/*   Updated: 2023/09/12 10:26:29 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(void): ClapTrap()
+
+FragTrap::FragTrap(void): ScavTrap()
 {
-    std::cout << "Default constructor called ScavTrap" << std::endl;
-    _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
-    _gateMode = false;
+    std::cout << "Default constructor called FragTrap" << std::endl;
+    _energyPoints = 100;
+    _attackDamage = 30;
     std::cout << "ScavTrap" << _name << "has been created with:" << std::endl;
     std::cout << "(" << _hitPoints << ") hitPoints." << std::endl;
     std::cout << "(" << _energyPoints << ") energyPoints." << std::endl;
@@ -26,30 +25,30 @@ ScavTrap::ScavTrap(void): ClapTrap()
     std::cout << "(" << _gateMode << ") gateMode." << std::endl;
 };
 
-ScavTrap::ScavTrap(std::string name): ClapTrap(name)
+FragTrap::FragTrap(std::string name): ScavTrap(name)
 {   
-    std::cout << "String constructor called ScavTrap" << std::endl;
+    std::cout << "String constructor called FragTrap" << std::endl;
     _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
+    _energyPoints = 100;
+    _attackDamage = 30;
     _gateMode = false;
-    std::cout << "ScavTrap " << _name << " has been created with:" << std::endl;
+    std::cout << "FragTrap " << _name << " has been created with:" << std::endl;
     std::cout << "(" << _hitPoints << ") hitPoints." << std::endl;
     std::cout << "(" << _energyPoints << ") energyPoints." << std::endl;
     std::cout << "(" << _attackDamage << ") attackDamage." << std::endl;
     std::cout << "(" << _gateMode << ") gateMode." << std::endl;
 };
 
-ScavTrap::ScavTrap(const ScavTrap& other)
+FragTrap::FragTrap(const FragTrap& other)
 {
-    std::cout << "Copy constructor called ScavTrap" << std::endl;
+    std::cout << "Copy constructor called FragTrap" << std::endl;
     *this = other;
 }
 
 
-ScavTrap &ScavTrap::operator=(ScavTrap const &other)
+FragTrap &FragTrap::operator=(FragTrap const &other)
 {
-    std::cout << "Copy assignment operator called ScavTrap" << std::endl;
+    std::cout << "Copy assignment operator called FragTrap" << std::endl;
     this->_name = other._name;
     this->_hitPoints = other._hitPoints;
     this->_energyPoints = other._energyPoints;
@@ -57,13 +56,12 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &other)
     return *this;
 };
 
-ScavTrap::~ScavTrap(void)
+FragTrap::~FragTrap(void)
 {
-    std::cout << "Destructor called ScavTrap" << std::endl;
+    std::cout << "Destructor called FragTrap" << std::endl;
 };
 
-void    ScavTrap::guardGate(void)
+void    FragTrap::highFivesGuys(void)
 {
-    _gateMode = true;
-    std::cout <<  _name << " has used GuardGate and it's now in Gate keeper mode." << std::endl;
+    std::cout <<  _name << " has used highFivesGuy -> 'Hi! HighFive!!!'" << std::endl;
 }

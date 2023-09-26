@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 12:23:31 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/12 10:22:31 by inunez-g         ###   ########.fr       */
+/*   Updated: 2023/09/12 10:22:07 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap& other)
 {
-    std::cout << "Copy constructor called ScavTrap" << std::endl;
+    std::cout << "Copy constructor called" << std::endl;
     *this = other;
 }
 

@@ -1,14 +1,18 @@
 NAME = ex01
 
 SRC = main.cpp \
-	  ClapTrap.cpp \
-	  ScavTrap.cpp \
+	  Animal.cpp \
+	  Cat.cpp \
+	  Dog.cpp \
+	  WrongAnimal.cpp \
+	  WrongCat.cpp \
+	  Brain.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=address
 
 all: $(NAME)
 

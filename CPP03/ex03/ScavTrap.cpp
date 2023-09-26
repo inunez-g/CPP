@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 12:23:31 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/12 10:22:31 by inunez-g         ###   ########.fr       */
+/*   Updated: 2023/09/15 12:36:23 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ ScavTrap::ScavTrap(void): ClapTrap()
     _energyPoints = 50;
     _attackDamage = 20;
     _gateMode = false;
-    std::cout << "ScavTrap" << _name << "has been created with:" << std::endl;
+    /*std::cout << "ScavTrap" << _name << "has been created with:" << std::endl;
     std::cout << "(" << _hitPoints << ") hitPoints." << std::endl;
     std::cout << "(" << _energyPoints << ") energyPoints." << std::endl;
     std::cout << "(" << _attackDamage << ") attackDamage." << std::endl;
-    std::cout << "(" << _gateMode << ") gateMode." << std::endl;
+    std::cout << "(" << _gateMode << ") gateMode." << std::endl;*/
 };
 
 ScavTrap::ScavTrap(std::string name): ClapTrap(name)
@@ -33,16 +33,16 @@ ScavTrap::ScavTrap(std::string name): ClapTrap(name)
     _energyPoints = 50;
     _attackDamage = 20;
     _gateMode = false;
-    std::cout << "ScavTrap " << _name << " has been created with:" << std::endl;
+    /*std::cout << "ScavTrap " << _name << " has been created with:" << std::endl;
     std::cout << "(" << _hitPoints << ") hitPoints." << std::endl;
     std::cout << "(" << _energyPoints << ") energyPoints." << std::endl;
     std::cout << "(" << _attackDamage << ") attackDamage." << std::endl;
-    std::cout << "(" << _gateMode << ") gateMode." << std::endl;
+    std::cout << "(" << _gateMode << ") gateMode." << std::endl;*/
 };
 
-ScavTrap::ScavTrap(const ScavTrap& other)
+ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
-    std::cout << "Copy constructor called ScavTrap" << std::endl;
+    std::cout << "Copy constructor called" << std::endl;
     *this = other;
 }
 
@@ -66,4 +66,17 @@ void    ScavTrap::guardGate(void)
 {
     _gateMode = true;
     std::cout <<  _name << " has used GuardGate and it's now in Gate keeper mode." << std::endl;
+}
+
+void ScavTrap::attack(const std::string& target)//
+{
+    if (_energyPoints >= 1 && _hitPoints > 0)
+    {
+        _energyPoints -= 1;
+        std::cout << "ScavTrap " << _name << " attacks " << target << ", causing " << _attackDamage << " points of damage!" << std::endl;
+    }
+    else
+    {
+        std::cout << "ScavTrap " << _name << " can't attack because has no energyPoints or no HP." << std::endl;
+    }
 }

@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/07 12:23:28 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/12 09:47:56 by inunez-g         ###   ########.fr       */
+/*   Created: 2023/09/12 09:55:19 by inunez-g          #+#    #+#             */
+/*   Updated: 2023/09/15 12:25:02 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class FragTrap: virtual public ClapTrap
 {
-    private:
-        bool _gateMode;
-    public:
-        ScavTrap(void);
-        ScavTrap(std::string name);
-        ScavTrap(const ScavTrap& other);
-        ScavTrap &operator=(ScavTrap const &other);
-        ~ScavTrap(void);
+    protected:
+        static const int    _initHealth = 100;
+        static const int    _initEnergy = 100;
+        static const int    _initDamage = 30;
 
-        void guardGate(void);
+    public:
+        FragTrap(void);
+        FragTrap(std::string name);
+        FragTrap(const FragTrap& other);
+        FragTrap &operator=(FragTrap const &other);
+        ~FragTrap(void);
+
+        void highFivesGuys(void);
 };
 
 #endif
