@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 09:55:19 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/15 12:25:02 by inunez-g         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:37:56 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ class FragTrap: virtual public ClapTrap
         ~FragTrap(void);
 
         void highFivesGuys(void);
+        void attack(const std::string& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
+        void info(void);
 };
 
 #endif

@@ -10,7 +10,7 @@ OBJ = $(SRC:.cpp=.o)
 
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow
 
 all: $(NAME)
 

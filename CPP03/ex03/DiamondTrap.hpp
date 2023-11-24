@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:32:24 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/22 18:11:36 by inunez-g         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:49:13 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,9 @@ class DiamondTrap: public ScavTrap, public FragTrap
         using ScavTrap::attack;
         std::string     getName( void ) const;
         void whoAmI(void);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
+        void info(void);
 };
 
 #endif

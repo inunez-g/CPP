@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 10:31:59 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/22 18:15:13 by inunez-g         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:50:13 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,40 @@ DiamondTrap::~DiamondTrap(void)
 void    DiamondTrap::whoAmI(void)
 {
     std::cout <<  "Hi, my name is ->" << _name << ", and my ClapTrap name is " << _dName << std::endl;//ClapTrap::_name << std::endl;
+}
+
+void DiamondTrap::takeDamage(unsigned int amount)
+{
+    unsigned int before = _hitPoints;
+    
+    if (amount > _hitPoints)
+        _hitPoints = 0;
+    else
+        _hitPoints -= amount;
+    std::cout << "DiamondTrap " << _name << " received an attack that took away " << before - _hitPoints << " of it's hitPoints(Health). " << _hitPoints << " hitPoints left." << std::endl;
+}
+
+void DiamondTrap::beRepaired(unsigned int amount)
+{
+    if (_energyPoints >= 1 && _hitPoints > 0)
+    {
+        _energyPoints -= 1;
+        std::cout << "DiamondTrap " << _name << " has been repaired using 1 energyPoint, gaining " << amount << " hitPoints(Health)." << std::endl;
+        _hitPoints += amount;
+    }
+    else
+    {
+        std::cout << "DiamondTrap " << _name << " can't repaire itself because has no energyPoints or no HP." << std::endl;
+    }
+    
+}
+
+void DiamondTrap::info(void)
+{
+    std::cout << "DiamondTrap " << _name << " now has the following stats:" << std::endl;
+    std::cout << "(" << _hitPoints << ") hitPoints." << std::endl;
+    std::cout << "(" << _energyPoints << ") energyPoints." << std::endl;
+    std::cout << "(" << _attackDamage << ") attackDamage." << std::endl;
 }
 
 std::string DiamondTrap::getName( void ) const {

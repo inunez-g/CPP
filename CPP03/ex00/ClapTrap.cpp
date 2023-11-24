@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/07 11:13:10 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/07 13:20:46 by inunez-g         ###   ########.fr       */
+/*   Updated: 2023/11/24 12:05:59 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,13 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    std::cout << "ClapTrap " << _name << " received an attack that took away " << amount << " of it's hitPoints(Health)." << std::endl;
-    _hitPoints -= amount;
+    unsigned int before = _hitPoints;
+    
+    if (amount > _hitPoints)
+        _hitPoints = 0;
+    else
+        _hitPoints -= amount;
+    std::cout << "ClapTrap " << _name << " received an attack that took away " << before - _hitPoints << " of it's hitPoints(Health). " << _hitPoints << " hitPoints left." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
