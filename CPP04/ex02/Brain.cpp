@@ -43,6 +43,6 @@ Brain &Brain::operator=(Brain const &other)
 
 Brain::~Brain(void)
 {
-     std::cout << "Brain Destructor called" << std::endl;
-     delete[] ideas;
+    std::cout << "Brain Destructor called" << std::endl;
+    //delete[] ideas;
 }

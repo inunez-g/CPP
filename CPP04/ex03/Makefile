@@ -1,12 +1,9 @@
-NAME = ex02
+NAME = ex03
 
 SRC = main.cpp \
-	  Animal.cpp \
-	  Cat.cpp \
-	  Dog.cpp \
-	  WrongAnimal.cpp \
-	  WrongCat.cpp \
-	  Brain.cpp \
+	  AMateria.cpp \
+	  ICharacter.cpp \
+	  IMateriaSource.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -18,7 +15,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $^ -o $(NAME)
-	@echo "\033[92mex02 has been successfully compiled!\033[0m"
+	@echo "\033[92mex03 has been successfully compiled!\033[0m"
 
 $.o: %.cpp
 	$(CC) $(CFLAGS) -c $^ -o $@
