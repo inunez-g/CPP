@@ -14,7 +14,6 @@
 #define ANIMAL_HPP
 
 #include <iostream>
-#include "Animal.hpp"
 
 class   Animal
 {
