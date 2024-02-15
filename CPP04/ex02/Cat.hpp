@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:27:48 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/14 10:12:44 by inunez-g         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:02:44 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ class   Cat: public Animal
     public:
         Cat();
         Cat(const Cat& other);
+        virtual ~Cat();
         Cat &operator=(Cat const &other);
-        ~Cat(void);
         
         void    makeSound() const;
         std::string getType() const;
+        std::string getCatIdea(int i) const;
+        void setCatIdea(int i, std::string idea);
 };
 
 #endif

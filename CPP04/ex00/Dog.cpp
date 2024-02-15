@@ -6,15 +6,15 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:27:51 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/13 11:29:56 by inunez-g         ###   ########.fr       */
+/*   Updated: 2023/12/04 13:47:47 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog()
+Dog::Dog() : Animal("Cat")
 {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "Dog Default constructor called" << std::endl;
     type = "Dog";
 }
 
@@ -33,7 +33,7 @@ Dog &Dog::operator=(Dog const &other)
 
 Dog::~Dog(void)
 {
-     std::cout << "Destructor called" << std::endl;
+     std::cout << "Dog Destructor called" << std::endl;
 }
 
 void    Dog::makeSound() const

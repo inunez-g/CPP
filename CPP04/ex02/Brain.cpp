@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 09:53:12 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/15 11:05:10 by inunez-g         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:06:45 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,10 @@
 Brain::Brain()
 {
     std::cout << "Brain Default constructor called" << std::endl;
-    int i = -1;
+    int i = 0;
 
-    while (i++ < 100)
-    {
+    for (int i = 0; i < 100; i++) {
         ideas[i] = "Idea number -> " + std::to_string(i);
-        //if (i == 50)
-            //std::cout << "Printing " << ideas[i] << std::endl;
     }
 }
 
@@ -29,6 +26,11 @@ Brain::Brain(const Brain& other)
 {
     std::cout << "Brain Copy constructor called" << std::endl;
     *this = other;
+}
+
+Brain::~Brain()
+{
+     std::cout << "Brain Destructor called" << std::endl;
 }
 
 Brain &Brain::operator=(Brain const &other)
@@ -41,8 +43,12 @@ Brain &Brain::operator=(Brain const &other)
     return *this;
 }
 
-Brain::~Brain(void)
+std::string Brain::getIdea(int i)
 {
-    std::cout << "Brain Destructor called" << std::endl;
-    //delete[] ideas;
+    return (this->ideas[i]);
+}
+
+void Brain::setIdea(int i, std::string idea)
+{
+    this->ideas[i] = idea;
 }

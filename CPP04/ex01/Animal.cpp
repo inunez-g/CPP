@@ -6,7 +6,7 @@
 /*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 10:27:43 by inunez-g          #+#    #+#             */
-/*   Updated: 2023/09/14 10:34:14 by inunez-g         ###   ########.fr       */
+/*   Updated: 2023/11/24 14:14:17 by inunez-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ Animal::Animal(const Animal& other)
 {
     std::cout << "Animal Copy constructor called" << std::endl;
     *this = other;
+}
+
+Animal::Animal(std::string animaltype) : type(animaltype) {
+    std::cout << "Animal NAME constructor called" << std::endl;
 }
 
 Animal &Animal::operator=(Animal const &other)
