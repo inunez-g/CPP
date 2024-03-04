@@ -16,7 +16,7 @@ int main()
 
 
 	std::cout << std::endl;
-    std::cout << "***** MAKE A BUREAUCRAT TO SIGN FORMS ******" << std::endl;
+    std::cout << "              MAKE A BUREAUCRAT TO SIGN FORMS       " << std::endl;
     std::cout << std::endl;
 
     try
@@ -31,7 +31,7 @@ int main()
     }
 
 	std::cout << std::endl;
-    std::cout << "---------MAKE A BUREAUCRAT TO SIGN FORM WITH INVALID GRADE-------" << std::endl;
+    std::cout << "---------  MAKE A BUREAUCRAT TO SIGN FORM WITH INVALID GRADE  -------" << std::endl;
     std::cout << std::endl;
 
     try

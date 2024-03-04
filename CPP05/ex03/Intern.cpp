@@ -27,14 +27,15 @@ Intern::~Intern()
 }
 
 AForm *Intern::ShubberyCreation(std::string target)
-{		
+{	
 	return (new ShrubberyCreationForm(target));
-
 }
+
 AForm *Intern::RobotomyCreation(std::string target)
 {
 	return (new RobotomyRequestForm(target));
 }
+
 AForm *Intern::PresidentialCreation(std::string target)
 {
 	return (new PresidentialPardonForm(target));
@@ -56,7 +57,10 @@ AForm   *Intern::makeForm(std::string f_name, std::string target)
     if (i == 3)
         throw Intern::FormNotFoundException();
     else
+    {
+        std::cout << "Intern creates " << PosibleForms[i] << " form." << std::endl;	
         return((this->*(types[i]))(target));
+    }
 }
 
 const char* Intern::FormNotFoundException::what() const throw()

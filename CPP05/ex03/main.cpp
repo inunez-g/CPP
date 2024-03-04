@@ -13,25 +13,27 @@ int main(void)
 	std::cout << "---------CREATE INTERN AND ASK FOR FORMS-------" << std::endl;
     std::cout << std::endl;
     
-	Intern someRandomIntern;
-    std::cout << "hola" << std::endl;
-	AForm* rrf;
-	AForm* rrf2;
-	AForm* rrf3;
+	Intern myIntern;
+	AForm* rf;
+	AForm* rf2;
+	AForm* rf3;
+	AForm* rf4;
+
 	
-	rrf = NULL;
-	rrf2 = NULL;
-	rrf3 = NULL;
+	rf = NULL;
+	rf2 = NULL;
+	rf3 = NULL;
+	rf4 = NULL;
 	try
 	{
-		rrf = someRandomIntern.makeForm("PresidentialPardon", "Bender");
-		std::cout << *rrf;
-		rrf2 = someRandomIntern.makeForm("RobotomyRequest", "Bender");
-		std::cout << *rrf2;
-		rrf3 = someRandomIntern.makeForm("ShrubberyCreation", "Bender");
-		std::cout << *rrf3;
-		rrf3 = someRandomIntern.makeForm("Random", "Bender"); //will throw an exception, does not match
-		std::cout << *rrf3;
+		rf = myIntern.makeForm("PresidentialPardon", "Bender");
+		std::cout << *rf;
+		rf2 = myIntern.makeForm("RobotomyRequest", "Bender");
+		std::cout << *rf2;
+		rf3 = myIntern.makeForm("ShrubberyCreation", "Bender");
+		std::cout << *rf3;
+		rf4 = myIntern.makeForm("Random", "Bender"); //will throw an exception, does not match
+		std::cout << *rf4;
 	}
     catch (std::exception & e)
     {
@@ -39,12 +41,14 @@ int main(void)
     }
 	
 		std::cout << std::endl;
-		if (rrf)
-			delete rrf;
-		if (rrf2)
-			delete rrf2;
-		if (rrf3)
-			delete rrf3;
+		if (rf)
+			delete rf;
+		if (rf2)
+			delete rf2;
+		if (rf3)
+			delete rf3;
+		if (rf4)
+			delete rf4;
 
 	std::cout << std::endl;
     std::cout << "---------CREATE BUREAUCRAT, ASK FOR FORM, SIGN AND EXECUTE-------" << std::endl;
@@ -55,11 +59,11 @@ int main(void)
     form = NULL;
     try
     {
-		Bureaucrat ep("Eperaita", 2);
-        form = someRandomIntern.makeForm("Presidential Pardon", "Bender");
+		Bureaucrat iker("inunez-g", 2);
+        form = myIntern.makeForm("Presidential Pardon", "Bender");
         std::cout << *form;
-		ep.signForm(*form);
-		ep.executeForm(*form);
+		iker.signForm(*form);
+		iker.executeForm(*form);
     }
     catch (std::exception & e)
     {

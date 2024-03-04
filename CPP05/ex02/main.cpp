@@ -1,16 +1,13 @@
-#include <iostream>
-#include "Bureaucrat.hpp" 
+#include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp" 
 #include "PresidentialPardonForm.hpp" 
 #include "RobotomyRequestForm.hpp" 
-#include <stdexcept>
 
-int main(void)
+int main()
 {
-
-	AForm *s = NULL;
-	AForm *r = NULL;
-	AForm *p = NULL;
+    AForm *shrub = NULL;
+	AForm *robot = NULL;
+	AForm *presi = NULL;
 
 	std::cout << std::endl;
 	std::cout << "---------TRY TO CREATE FORMS-------" << std::endl;
@@ -18,141 +15,106 @@ int main(void)
     
 	try
 	{
-        s = new ShrubberyCreationForm("Arbustinho");
-		std::cout << *s;
-        r = new RobotomyRequestForm("ConcreteWall");
-		std::cout << *r;
-        p = new PresidentialPardonForm("Arthur");
-		std::cout << *p;
+        shrub = new ShrubberyCreationForm("Shrubbery");
+		std::cout << *shrub;
+        robot = new RobotomyRequestForm("Robotomy");
+		std::cout << *robot;
+        presi = new PresidentialPardonForm("Presidential");
+		std::cout << *presi;
 
 	}
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
-	
-		std::cout << std::endl;
-		if (s)
-			delete s;
-		if (r)
-			delete r;
-		if (p)
-			delete p;
+    std::cout << std::endl;
+    if (shrub)
+        delete shrub;
+    if (robot)
+        delete robot;
+    if (presi)
+        delete presi;
 
 	std::cout << std::endl;
-    std::cout << "---------MAKE A BUREAUCRAT TO SIGN FORMS OF DIFFERENT TYPES-------" << std::endl;
+    std::cout << "        MAKE A BUREAUCRAT TO SIGN FORMS" << std::endl;
     std::cout << std::endl;
 
     try
     {
-		s = new ShrubberyCreationForm("Arbustinho");
-        r = new RobotomyRequestForm("ConcreteWall");
-        p = new PresidentialPardonForm("Arthur");
-		Bureaucrat a("inunez-g", 2);
-		a.signForm(*s);
-		std::cout << *s;
-		a.signForm(*r);
-		std::cout << *r;
-		a.signForm(*p);
-		std::cout << *p;
+		shrub = new ShrubberyCreationForm("Shrubbery");
+        robot = new RobotomyRequestForm("Robotomy");
+        presi = new PresidentialPardonForm("Presidential");
+        Bureaucrat iker("inunez-g", 2);
+        iker.signForm(*shrub);
+		std::cout << *shrub;
+		iker.signForm(*robot);
+		std::cout << *robot;
+		iker.signForm(*presi);
+		std::cout << *presi;
     }
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
-		
-		std::cout << std::endl;
-		if (s)
-			delete s;
-		if (r)
-			delete r;
-		if (p)
-			delete p;
+    if (shrub)
+        delete shrub;
+    if (robot)
+        delete robot;
+    if (presi)
+        delete presi;
 
 	std::cout << std::endl;
-	std::cout << "---------MAKE A BUREAUCRAT TO EXE FORM OF DIFFERENT TYPES-------" << std::endl;
+    std::cout << "--------- MAKE A BUREAUCRAT TO EXECUTE FORMS -------" << std::endl;
     std::cout << std::endl;
 
     try
     {
-		s = new ShrubberyCreationForm("Arbustinho");
-        r = new RobotomyRequestForm("ConcreteWall");
-        p = new PresidentialPardonForm("Arthur");
-        Bureaucrat a("inunez-g", 2);
-		a.signForm(*s);
-        r->beSigned(a);//Form can be signed by the form too
-        a.signForm(*p);
-        a.executeForm(*s);
-        a.executeForm(*r);
-        a.executeForm(*p);
+        Bureaucrat iker("inunez-g", 2);
+        shrub = new ShrubberyCreationForm("Shrubbery");
+        robot = new RobotomyRequestForm("Robotomy");
+        presi = new PresidentialPardonForm("Presidential");
+        iker.signForm(*shrub);
+        iker.signForm(*robot);
+        iker.signForm(*presi);
+        iker.executeForm(*shrub);
+        iker.executeForm(*robot);
+        iker.executeForm(*presi);
     }
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
+    if (shrub)
+        delete shrub;
+    if (robot)
+        delete robot;
+    if (presi)
+        delete presi;
 
-		std::cout << std::endl;
-		if (s)
-			delete s;
-		if (r)
-			delete r;
-		if (p)
-			delete p;
-
-	std::cout << std::endl;
-    std::cout << "---------MAKE A BUREAUCRAT TO EXE FORM OF DIFFERENT TYPES (FAIL: Not Signed)-------" << std::endl;
+    std::cout << std::endl;
+    std::cout << "--------- MAKE A BUREAUCRAT TO EXE FORMS (ERROR) -------" << std::endl;
     std::cout << std::endl;
 
     try
     {
-		s = new ShrubberyCreationForm("Arbustinho");
-        r = new RobotomyRequestForm("ConcreteWall");
-        p = new PresidentialPardonForm("Arthur");
-        Bureaucrat a("inunez-g", 2);
-        a.executeForm(*s);
-        a.executeForm(*r);
-        a.executeForm(*p);
+        Bureaucrat iker("inunez-g", 150);
+        shrub = new ShrubberyCreationForm("Shrubbery");
+        robot = new RobotomyRequestForm("Robotomy");
+        presi = new PresidentialPardonForm("Presidential");
+        iker.executeForm(*shrub);
+        iker.executeForm(*robot);
+        iker.executeForm(*presi);
     }
     catch (std::exception & e)
     {
         std::cout << e.what() << std::endl;
     }
-        
-		std::cout << std::endl;
-		if (s)
-			delete s;
-		if (r)
-			delete r;
-		if (p)
-			delete p;
-
-	 std::cout << std::endl;
-    std::cout << "---------MAKE A BUREAUCRAT TO EXE FORM OF DIFFERENT TYPES (FAIL: Not enough grade)-------" << std::endl;
-    std::cout << std::endl;
-
-    try
-    {
-		s = new ShrubberyCreationForm("Arbustinho");
-        r = new RobotomyRequestForm("ConcreteWall");
-        p = new PresidentialPardonForm("Arthur");
-        Bureaucrat a("inunez-g", 150);
-        a.executeForm(*s);
-        a.executeForm(*r);
-        a.executeForm(*p);
-    }
-    catch (std::exception & e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-	
-		std::cout << std::endl;
-		if (s)
-			delete s;
-		if (r)
-			delete r;
-		if (p)
-			delete p;
-
+    if (shrub)
+        delete shrub;
+    if (robot)
+        delete robot;
+    if (presi)
+        delete presi;
 
 	return 0;
 }
