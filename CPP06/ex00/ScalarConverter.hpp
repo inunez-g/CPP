@@ -10,9 +10,7 @@ class ScalarConverter{
     private:
         ScalarConverter();
         ScalarConverter(const ScalarConverter& other);
-        // Operador de asignación
         ScalarConverter& operator=(const ScalarConverter& other);
-        // Destructor
         ~ScalarConverter();
 
     public:

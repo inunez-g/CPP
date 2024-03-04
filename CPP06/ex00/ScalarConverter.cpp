@@ -1,5 +1,29 @@
 #include "ScalarConverter.hpp"
 
+
+ScalarConverter::ScalarConverter(){
+	std::cout << "ScalarConverter Default Constructor called" << std::endl;
+}
+
+ScalarConverter::~ScalarConverter(){
+
+	std::cout << "ScalarConverter Destructor called" << std::endl;
+}
+
+ScalarConverter::ScalarConverter(ScalarConverter const &other)
+{
+	std::cout << "ScalarConverter Copy constructor called" << std::endl;
+	*this = other;
+}
+
+ScalarConverter &ScalarConverter::operator=(ScalarConverter const &other)
+{
+	std::cout << "ScalarConverter Assignation operator called" << std::endl;
+    (void)other;
+    return (*this);
+}
+
+
 void    ScalarConverter::pseudo_literals(const std::string &str)
 {
     std::cout << "char: impossible" << std::endl;
