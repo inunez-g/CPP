@@ -1,34 +1,35 @@
 NAME = ex02
 
 SRC = main.cpp \
-	  Bureaucrat.cpp \
-	  AForm.cpp \
-	  ShrubberyCreationForm.cpp \
-	  RobotomyRequestForm.cpp \
-	  PresidentialPardonForm.cpp \
-	  
+	Bureaucrat.cpp \
+	AForm.cpp \
+	ShrubberyCreationForm.cpp \
+	RobotomyRequestForm.cpp \
+	PresidentialPardonForm.cpp
+
 
 OBJ = $(SRC:.cpp=.o)
 
+INC = -I.
+
 CC = clang++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -std=c++98 -Werror -Wextra -Wall -O2 #-g3 -fsanitize=address
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $^ -o $(NAME)
-	@echo "\033[92mex02 has been successfully compiled!\033[0m"
+	$(CC) $(FLAGS) $(INC) $^ -o $@
 
-$.o: %.cpp
-	$(CC) $(CFLAGS) -c $^ -o $@
+%.o: %.cpp
+	$(CC) $(FLAGS) $(INC) -c $< -o $@
 
 clean:
-	@rm -f $(OBJ)
+	rm -rf $(OBJ)
 
 fclean: clean
-	@rm -rf $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+phony: all re clean fclean

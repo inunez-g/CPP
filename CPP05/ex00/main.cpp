@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/05 16:52:24 by inunez-g          #+#    #+#             */
+/*   Updated: 2024/03/05 16:57:03 by inunez-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 int main()
@@ -6,11 +18,11 @@ int main()
     try
     {
         Bureaucrat a("Bureaucrat1", 3);
-        std::cout << a;
+        std::cout << a << std::endl;
         a.increment_grade();
-        std::cout << a;
+        std::cout << a << std::endl;
         a.decrement_grade();
-        std::cout << a;
+        std::cout << a << std::endl;
     }
     catch (std::exception & e)
     {
@@ -21,11 +33,11 @@ int main()
     try
     {
         b = new Bureaucrat("Bureaucrat2", 3);
-        std::cout << *b;
+        std::cout << *b << std::endl;
         b->increment_grade();
-        std::cout << *b;
+        std::cout << *b << std::endl;
         b->decrement_grade();
-        std::cout << *b;
+        std::cout << *b << std::endl;
     }
     catch(const std::exception& e)
     {

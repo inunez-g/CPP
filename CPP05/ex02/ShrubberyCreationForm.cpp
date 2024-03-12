@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/05 17:17:27 by inunez-g          #+#    #+#             */
+/*   Updated: 2024/03/05 17:49:47 by inunez-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ShrubberyCreationForm.hpp"
 #include <stdexcept>
 #include <fstream>
@@ -51,27 +63,27 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
         out << "      .            _        .                    ." << std::endl;
         out << "   ,              /;-._,-.____        ,-----.__" << std::endl;
         out << "  ((        .    (_:#::_.:::. `-._   /:, /-._, `._," << std::endl;
-        out << "   `                 \   _|`'=:_::.`.);  \ __/ /" << std::endl;
-        out << "                       ,    `./  \:. `.   )==-'  ." << std::endl;
-        out << "     .      ., ,-=-.  ,\, +#./`   \:.  / /           ." << std::endl;
-        out << " .           \/:/`-' , ,\ '` ` `   ): , /_  -o" << std::endl;
-        out << "        .    /:+- - + +- : :- + + -:'  /(o-) \)     ." << std::endl;
-        out << "   .      ,=':  \    ` `/` ' , , ,:' ''--`.--''---._/`7" << std::endl;
-        out << "    `.   (    \: \,-._` ` + '\, ,''   _,--._,---'':.__/" << std::endl;
-        out << "               \:  `  X` _| _,\/'   .-'" << std::endl;
-        out << " .               `:._:`\____  /:'  /      .           ." << std::endl;
-        out << "                     \::.  :\/:'  /              +" << std::endl;
+        out << "   `                 \\   _|`'=:_::.`.);  \\ __/ /" << std::endl;
+        out << "                       ,    `./  \\:. `.   )==-'  ." << std::endl;
+        out << "     .      ., ,-=-.  ,\\, +#./`   \\:.  / /           ." << std::endl;
+        out << " .           \\/:/`-' , ,\\ '` ` `   ): , /_  -o" << std::endl;
+        out << "        .    /:+- - + +- : :- + + -:'  /(o-) \\)     ." << std::endl;
+        out << "   .      ,=':  \\    ` `/` ' , , ,:' ''--`.--''---._/`7" << std::endl;
+        out << "    `.   (    \\: \\,-._` ` + '\\, ,''   _,--._,---'':.__/" << std::endl;
+        out << "               \\:  `  X` _| _,\\/'   .-'" << std::endl;
+        out << " .               `:._:`\\____  /:'  /      .           ." << std::endl;
+        out << "                     \\::.  :\\/:'  /              +" << std::endl;
         out << "    .                 `.:.  /:'  }      ." << std::endl;
-        out << "            .           ):_(:;   \           ." << std::endl;
+        out << "            .           ):_(:;   \\           ." << std::endl;
         out << "                       /:. _/ ,  |" << std::endl;
         out << "                    . (|::.     ,`                  ." << std::endl;
-        out << "      .                |::.    {\ " << std::endl;
-        out << "                       |::.\  \ `." << std::endl;
-        out << "                       |:::(\    |" << std::endl;
+        out << "      .                |::.    {\\ " << std::endl;
+        out << "                       |::.\\  \\ `." << std::endl;
+        out << "                       |:::(\\    |" << std::endl;
         out << "               O       |:::/{ }  |                  (o" << std::endl;
-        out << "                )  ___/#\::`/ (O `==._____   O, (O  /`" << std::endl;
-        out << "           ~~~w/w~`~~,\` `:/,-(~``~~~~~~~~`~o~\~/~w|/~" << std::endl;
-        out << "       ~~~~~~~~~~~~~~~~~~~~~~~\\W~~~~~~~~~~~~\|/~~" << std::endl;
+        out << "                )  ___/#\\::`/ (O `==._____   O, (O  /`" << std::endl;
+        out << "           ~~~w/w~`~~,\\` `:/,-(~``~~~~~~~~`~o~\\~/~w|/~" << std::endl;
+        out << "       ~~~~~~~~~~~~~~~~~~~~~~~\\W~~~~~~~~~~~~\\|/~~" << std::endl;
         out.close();
         std::cout << this->getTarget() << "has been successfully created!" << std::endl;
 	}	

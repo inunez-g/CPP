@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/05 17:16:55 by inunez-g          #+#    #+#             */
+/*   Updated: 2024/03/05 17:41:04 by inunez-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "AForm.hpp"
 
 AForm::AForm(): name("Unknown"), target("No target"), isSigned(false), grade_to_sign(150), grade_to_exec(150)
@@ -5,7 +17,8 @@ AForm::AForm(): name("Unknown"), target("No target"), isSigned(false), grade_to_
 	std::cout <<  name << "Form Default constructor called" << std::endl;
 }
 
-AForm::AForm(std::string const &f_name, std::string const &f_target, bool isSigned, unsigned int f_grade_sign, unsigned int f_grade_exec): name(f_name), target(f_target), isSigned(false), grade_to_sign(f_grade_sign), grade_to_exec(f_grade_exec)
+AForm::AForm(std::string const &f_name, std::string const &f_target, bool isSigned, unsigned int f_grade_sign, unsigned int f_grade_exec)
+	: name(f_name), target(f_target), isSigned(isSigned), grade_to_sign(f_grade_sign), grade_to_exec(f_grade_exec)
 {
 	std::cout << name << " Form Parameter constructor called" << std::endl;
 

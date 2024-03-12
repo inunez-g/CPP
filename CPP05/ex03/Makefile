@@ -12,7 +12,6 @@ SRC = main.cpp \
 OBJ = $(SRC:.cpp=.o)
 
 CC = clang++
-
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)

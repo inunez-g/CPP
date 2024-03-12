@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: inunez-g <inunez-g@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/05 17:19:22 by inunez-g          #+#    #+#             */
+/*   Updated: 2024/03/05 17:56:00 by inunez-g         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Bureaucrat.hpp" 
 #include "Intern.hpp" 
@@ -60,7 +72,7 @@ int main(void)
     try
     {
 		Bureaucrat iker("inunez-g", 2);
-        form = myIntern.makeForm("Presidential Pardon", "Bender");
+        form = myIntern.makeForm("PresidentialPardon", "Bender");
         std::cout << *form;
 		iker.signForm(*form);
 		iker.executeForm(*form);
